@@ -9,11 +9,13 @@ for root, dirs, files in os.walk(content_dir):
     if root == content_dir:
         for d in dirs:
             children = []
-            path = os.path.join(root, d)
+            dir_path = os.path.join(root, d)
 
-            for f in os.listdir(path):
+            for f in os.listdir(dir_path):
                 if f.endswith(".ipynb") or f.endswith(".md"):
-                    children.append({"file": f"{path}/{f}"})
+                    rel_path = os.path.join(dir_path, f)
+                    rel_path = rel_path.replace(os.sep, "/")
+                    children.append({"file": rel_path})
 
             toc.append({
                 "title": d,
