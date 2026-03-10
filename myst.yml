@@ -5,8 +5,8 @@ project:
   - file: content/index.md
   - children:
     - file: content/array/code.ipynb
-    - file: content/array/short.md
-    - file: content/array/text.md
+    - file: content/array/consion.md
+    - file: content/array/ideas.md
     title: array
 site:
   title: 算法笔记
